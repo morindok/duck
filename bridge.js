@@ -143,7 +143,16 @@ const server = http.createServer((req, res) => {
 
       chain = chain.then(async () => {
         try {
-          const text = await chatTurn(duckModel, userText, 180000);
+          let text;
+          try {
+            text = await chatTurn(duckModel, userText, 180000);
+          } catch (e1) {
+            // Streaming body reads can intermittently come back empty — retry the whole turn once.
+            if (!/empty response|timeout/.test(e1.message || '')) throw e1;
+            log('turn retry after:', e1.message);
+            await new Promise(r => setTimeout(r, 2000));
+            text = await chatTurn(duckModel, userText, 180000);
+          }
           const id = 'chatcmpl-duck-' + Date.now();
           const created = Math.floor(Date.now() / 1000);
           if (parsed.stream) {
