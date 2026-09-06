@@ -121,7 +121,7 @@ const server = http.createServer((req, res) => {
 
   if (url.pathname === '/v1/models') {
     const now = Math.floor(Date.now() / 1000);
-    const data = Object.keys(MODELS).map(id => ({ id, object: 'model', created: now, owned_by: 'duck.ai' }));
+    const data = Object.keys(MODELS).map(id => ({ id: id.replace(/^duck\//, ''), object: 'model', created: now, owned_by: 'duck.ai' }));
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify({ object: 'list', data }));
   }
