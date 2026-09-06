@@ -1,52 +1,51 @@
-# duck-ai-bridge
+# 📊 BITMOON618 Indicators Collection — مجموعه کامل اندیکاتورهای تریدینگ ویو
 
-پروکسی duck.ai → API سازگار با OpenAI برای opencode — بدون لاگین.
+> کالکشن جامع **۲۸ دسته** و **صدها اندیکاتور و ابزار تحلیل تکنیکال** شامل Pine Script (TradingView) و Python — اسپیرال، میرور، گن، ایچیموکو، حجم، فوت‌پرینت، Smart Money و سیگنال‌های خودکار.
 
-## معماری
+![Category](https://img.shields.io/badge/Categories-28-blue) ![Type](https://img.shields.io/badge/Type-Pine%20Script%20%2B%20Python-green) ![License](https://img.shields.io/badge/Use-Educational-orange)
 
-یه سشن **کروم واقعی (headed, Playwright)** دائمی باز می‌مونه روی duck.ai:
+## 🚀 شروع سریع
+- **اندیکاتور TradingView:** کد فایل را در Pine Editor کپی و Add to Chart کنید.
+- **ابزار Python:** `python file.py` — نیاز به Python 3.10+
 
-```
-opencode (فرمت OpenAI)
-   │  POST http://127.0.0.1:8121/v1/chat/completions
-   ▼
-bridge.js  ──►  تایپ پیام در صفحه‌ی duck.ai + Enter
-   │            (هدرهای احراز هویت را خود مرورگر واقعی می‌سازد)
-   ▼
-پاسخ از استریم واقعی شبکه‌ی مرورگر شنود و پارس می‌شود
-   │
-   ▼
-بازگشت به opencode (chat.completion)
-```
+## 📚 فهرست دسته‌بندی‌ها
 
-## اجرا
+| دسته | توضیحات | تعداد فایل |
+|------|---------|-----------|
+| [Alpha Line](01-alpha-line/) | خط آلفا — خط داینامیک حمایت/مقاومت مبتنی بر ریاضیات فیبوناچی | 1 |
+| [Boxes & Zones](02-boxes-zones/) | باکس‌ها و زون‌های کلیدی بازار — تشخیص نواحی تجمیع و توزیع | 1 |
+| [Bitmoon System](03-bitmoon-system/) | سیستم کامل Bitmoon — ترکیب میرور، سیگنال و اسیلاتور | 2 |
+| [Detrend Price](04-detrend-price/) | حذف روند از قیمت (Detrend) برای دیدن چرخه‌های خالص | 9 |
+| [Dragon System](05-dragon-system/) | سیستم اژدها — تحلیل‌گر روند و قدرت بازار | 3 |
+| [Fibo Flat](06-fibo-flat/) | سطح تخت فیبوناچی و خط تجمعی برای نقاط برگشت | 2 |
+| [Footprinting](07-footprinting/) | فوت‌پرینت و تحلیل سفارشات — ریزساختار بازار | 2 |
+| [Gannzilla](08-gannzilla/) | ابزارهای W.D. Gann — مربع ۹، ماشین گن، مدل‌های اتمی | 16 |
+| [Geometric Pivots](09-geometric-pivots/) | پیوت‌های هندسی و مسیر قیمتی | 2 |
+| [Ichimoku](10-ichimoku/) | سیستم ایچیموکو طلایی و نسخه‌های سیگنال‌ده | 4 |
+| [IchiMoving](11-ichimoving/) | ترکیب ایچیموکو با میانگین‌های متحرک | 1 |
+| [MA Convergence & Divergence](12-ma-convergence-divergence/) | همگرایی و واگرایی میانگین‌های متحرک | 1 |
+| [Magical Ruler](13-magical-ruler/) | خط‌کش جادویی — اندازه‌گیری پروجکشن قیمتی | 2 |
+| [Parallel Lines](14-parallel-lines/) | خطوط موازی زنده و شبکه هارمونیک مارکوف-بیز | 7 |
+| [Core Powerful Tools](15-core-powerful/) | مجموعه‌ی اصلی و قدرتمند — میرور، اسپیرال، سیستمی | 65 |
+| [Python Tools](16-python-tools/) | ابزارهای پایتون — کلاک، اسپیرال، فوت‌پرینت، گن، شبکه عصبی | 747 |
+| [Quant](17-quant/) | ابزارهای کمّی و مدل‌های پیش‌بینی | 4 |
+| [Rulers](18-rulers/) | خط‌کش‌های هندسی قیمتی | 2 |
+| [Simple Base](19-simple-base/) | اندیکاتورهای پایه — اشکال، اسپیرال، شمارنده تیک | 60 |
+| [Spiral Analyzer](20-spiral-analyzer/) | تحلیل‌گر اسپیرال — پیش‌بینی پیوت با لوگاریتمیک اسپیرال | 4 |
+| [Strategy](21-strategy/) | استراتژی‌های معاملاتی — نقدینگی و Smart Money | 1 |
+| [Super Mirror](22-super-mirror/) | ابَرمیرور — بازتاب قیمت، اسیلاتور و تحلیل زمان | 17 |
+| [Time Machine](23-time-machine/) | ماشین زمان — بازتاب تاریخی قیمت و پروجکشن | 5 |
+| [Trend Lines](24-trend-lines/) | خطوط روند مبتنی بر میانگین متحرک | 1 |
+| [Volume Analyzer](25-volume-analyzer/) | تحلیل‌گر حجم — زون‌های قدرت حجم و داشبورد | 11 |
+| [Volume](26-volume/) | کندل‌های حجمی و پروفایل حجم-میانگین | 2 |
+| [Voting System](27-voting-system/) | سیستم رأی‌گیری چند اندیکاتوره برای تأیید سیگنال | 1 |
+| [Signals](28-signals/) | اندیکاتورهای سیگنال‌ده — برگشت میرور و سیستم LookBack | 3 |
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File F:\AI\duck\start-bridge.ps1
-```
+## 🎓 آموزش
+هر اندیکاتور یک فایل مستندات `.md` اختصاصی دارد: معرفی، نصب، نحوه استفاده و نکات معاملاتی.
 
-- پنجره‌ی کروم باز می‌شود و duck.ai لود می‌شود — **این پنجره باید باز بماند.**
-- اگر چالش ظاهر شد (تصویر اردک، دکمه‌ی Continue و…)، **همان‌جا دستی حلش کن.**
-- بعد از آن opencode مدل‌های «Duck AI (web free)» را دارد.
+## 🔍 کلمات کلیدی
+`tradingview indicators` `pine script strategies` `crypto trading tools` `gann square of 9` `ichimoku` `volume profile` `smart money concepts` `spiral trading` `اندیکاتور تریدینگ ویو` `سیستم معاملاتی` `تحلیل تکنیکال کریپتو` `سیگنال خرید فروش`
 
-## اندپوینت‌ها
-
-| مسیر | توضیح |
-|---|---|
-| `POST /v1/chat/completions` | فرمت OpenAI (stream=true هم پذیرفته می‌شود؛ پاسخ در یک chunk) |
-| `GET /v1/models` | لیست مدل‌ها |
-| `GET /health` | وضعیت پل و مرورگر |
-
-## نکات
-
-- **مدل:** duck.ai سمت سرور مدل پیش‌فرض خودش (الان `gpt-5.6-luna`) را اعمال می‌کند؛ انتخاب مدل در پل فعلاً به UI مرورگر واگذار شده — اسم مدل درخواستی فقط برای نمایش حفظ می‌شود.
-- **کانتکست:** هر turn یک چت جدید باز می‌کند؛ تاریخچه‌ی گفتگو را duck.ai نگه نمی‌دارد بین turn ها (فقط آخرین پیام کاربر ارسال می‌شود).
-- **صف‌بندی:** درخواست‌های همزمان serialize می‌شوند (یک چت در هر لحظه).
-- **ری‌استارت:** `start-bridge.ps1` نمونه‌ی قبلی را می‌بندد و دوباره بالا می‌آورد؛ پروفایل مرورگر در `pw-profile/` ماندگار است (چالش‌های تکراری کمتر).
-
-## فایل‌ها
-
-- `bridge.js` — پل اصلی (API + Playwright)
-- `start-bridge.ps1` — راه‌انداز/ری‌استارت
-- `pw-profile/` — پروفایل مرورگر (کوکی‌ها/سشن)
-- `proxy.js` — نسخه‌ی قدیمی پراکسی HTTP (مهجور؛ پل جایگزینش شد)
+## ⚖️ License / سلب مسئولیت
+تمام محتوا برای مقاصد **آموزشی** است و توصیه مالی محسوب نمی‌شود.
